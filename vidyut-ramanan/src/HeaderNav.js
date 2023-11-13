@@ -4,23 +4,27 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-function HeaderNav() {
-  const fontSize = { fontFamily: "inherit", fontSize: "24px", color: "black" };
-  const expand = "sm";
+function HeaderNav({ navBackground, navTheme }) {
+  const fontSize = {
+    fontFamily: "Sans-serif",
+    fontSize: "20px",
+  };
+  const expand = "md";
+
   return (
     <Navbar
       fixed="top"
       key={expand}
       expand={expand}
-      className="bg-body-tertiary"
+      bg={navBackground}
+      data-bs-theme={navTheme}
     >
       <Container fluid>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#home" className="ps-4">
           <img
-            src="/my-logo.png"
-            width="45"
-            height="45"
-            className="d-inline-block align-top"
+            src={navTheme === "light" ? "/my-logo.png" : "my-logo-white.png"}
+            width="50"
+            height="50"
             alt="v logo"
           />
         </Navbar.Brand>
@@ -31,26 +35,26 @@ function HeaderNav() {
           placement="end"
         >
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-              Vidyut Ramanan
-            </Offcanvas.Title>
+            <Offcanvas.Title
+              id={`offcanvasNavbarLabel-expand-${expand}`}
+            ></Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav className="justify-content-start flex-grow-1 pe-3">
-              <Nav.Link style={fontSize} href="#Home">
+            <Nav className="justify-content-end flex-grow-1 pe-4">
+              <Nav.Link className="me-5" style={fontSize} href="#Home">
                 Home
               </Nav.Link>
-              <Nav.Link style={fontSize} href="#Projects">
-                Projects
-              </Nav.Link>
-              <Nav.Link style={fontSize} href="#About">
+              <Nav.Link className="me-5" style={fontSize} href="#Projects">
                 About
               </Nav.Link>
-              <Nav.Link style={fontSize} href="#Resume">
-                Resume
+              <Nav.Link className="me-5" style={fontSize} href="#About">
+                Projects
+              </Nav.Link>
+              <Nav.Link className="me-5" style={fontSize} href="#Resume">
+                Contact
               </Nav.Link>
               <Nav.Link style={fontSize} href="#Contact">
-                Contact
+                Resume
               </Nav.Link>
             </Nav>
           </Offcanvas.Body>
