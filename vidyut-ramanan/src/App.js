@@ -147,8 +147,8 @@ function App() {
         style={{ backgroundColor: "lightgray" }}
         className="d-flex flex-column justify-content-center align-items-center"
       >
-        <h1 style={{ marginTop: "70px", marginBottom: "40px" }}>Projects</h1>
-        <div className="container">
+        <h1 style={{ marginTop: "70px", marginBottom: "70px" }}>Projects</h1>
+        <div className="container" style={{ marginBottom: "70px" }}>
           <div style={{}} className="row gy-4">
             {projects.map((item) => {
               return (
@@ -185,6 +185,80 @@ function App() {
             })}
           </div>
         </div>
+      </div>
+
+      <div
+        style={{ backgroundColor: "#333" }}
+        className="d-flex flex-column justify-content-center align-items-center"
+      >
+        <h1
+          style={{
+            marginTop: "70px",
+
+            color: "whitesmoke",
+          }}
+        >
+          Contact Me
+        </h1>
+        <div
+          style={{
+            color: "whitesmoke",
+            marginTop: "40px",
+            marginBottom: "70px",
+          }}
+          className="container"
+        >
+          <div className="row" style={{}}>
+            <div
+              className="col-sm col-md-6 d-flex flex-column justify-content-center align-items-center"
+              style={{}}
+            >
+              <a
+                className="iconContainer"
+                href="mailto:vidyut.ramanan@northeastern.edu"
+              >
+                <EnvelopeOpenFill className="mb-4 icon" size={iconSize} />
+              </a>
+              <h3>Email Me</h3>
+              <a
+                style={{ color: "whitesmoke" }}
+                href="mailto:vidyut.ramanan@northeastern.edu"
+              >
+                <p>ramanan.v@northeastern.edu</p>
+              </a>
+            </div>
+            <div className="col-sm col-md-6 d-flex flex-column justify-content-center align-items-center">
+              <a
+                className="iconContainer"
+                href="https://www.linkedin.com/in/vidyutramanan/"
+              >
+                <Linkedin className="mb-4 icon" size={iconSize} />
+              </a>
+              <h3>Connect With Me</h3>
+              <a
+                style={{ color: "whitesmoke" }}
+                href="https://www.linkedin.com/in/vidyutramanan/"
+              >
+                <p>https://www.linkedin.com/in/vidyutramanan/</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style={{ backgroundColor: "black" }}
+        className="d-flex flex-column justify-content-center align-items-center"
+      >
+        <small
+          style={{
+            color: "whitesmoke",
+            marginTop: "35px",
+            marginBottom: "35px",
+          }}
+        >
+          Copyright © 2023 Vidyut Ramanan. All rights reserved.
+        </small>
       </div>
     </div>
   );
