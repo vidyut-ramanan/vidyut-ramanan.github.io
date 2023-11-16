@@ -61,12 +61,6 @@ const projects = [
 function App() {
   const [navBackground, setNavBackground] = useState("dark");
   const [navTheme, setNavTheme] = useState("dark");
-  const handleMouseEnter = (e) => {
-    e.target.style.color = "white";
-  };
-  const handleMouseLeave = (e) => {
-    e.target.style.color = "black";
-  };
 
   return (
     <div>
@@ -103,17 +97,18 @@ function App() {
         <div className="d-flex justify-content-center ">
           <a
             className="iconContainer"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
             href="https://www.linkedin.com/in/vidyutramanan/"
           >
-            <Linkedin className="m-3 icon" color="white" size={iconSize} />
+            <Linkedin className="m-3 icon" size={iconSize} />
           </a>
-          <a href="https://github.com/vidyut-ramanan">
-            <Github className="m-3" color="white" size={iconSize} />
+          <a className="iconContainer" href="https://github.com/vidyut-ramanan">
+            <Github className="m-3 icon" size={iconSize} />
           </a>
-          <a href="mailto:vidyut.ramanan@northeastern.edu">
-            <EnvelopeOpenFill className="m-3" color="white" size={iconSize} />
+          <a
+            className="iconContainer"
+            href="mailto:vidyut.ramanan@northeastern.edu"
+          >
+            <EnvelopeOpenFill className="m-3 icon" size={iconSize} />
           </a>
         </div>
       </div>
@@ -158,6 +153,7 @@ function App() {
             {projects.map((item) => {
               return (
                 <div
+                  key={item.Title}
                   style={{
                     justifyContent: "center",
                   }}

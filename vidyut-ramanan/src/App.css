@@ -1,4 +1,6 @@
 .iconContainer:hover > .icon {
-  color: yellow;
-  box-shadow: 1cm;
+  color: gainsboro;
+}
+.icon {
+  color: white;
 }
