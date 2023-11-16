@@ -2,7 +2,7 @@ import { useState } from "react";
 import HeaderNav from "./HeaderNav";
 import backgroundImage from "./background.jpeg";
 import Card from "react-bootstrap/Card";
-
+import "./App.css";
 import { EnvelopeOpenFill, Github, Linkedin } from "react-bootstrap-icons";
 
 var sectionStyle = {
@@ -14,6 +14,13 @@ var sectionStyle = {
 const iconSize = "40px";
 
 const projects = [
+  {
+    ImageUrl:
+      "https://i.pcmag.com/imagery/roundups/05ersXu1oMXozYJa66i9GEo-40..v1657319390.jpg",
+    Title: "Place Holder 1",
+    Description:
+      "Description description description description description description description description description description description description description description",
+  },
   {
     ImageUrl:
       "https://i.pcmag.com/imagery/roundups/05ersXu1oMXozYJa66i9GEo-40..v1657319390.jpg",
@@ -42,11 +49,24 @@ const projects = [
     Description:
       "Description description description description description description description description description description",
   },
+  {
+    ImageUrl:
+      "https://i.pcmag.com/imagery/roundups/05ersXu1oMXozYJa66i9GEo-40..v1657319390.jpg",
+    Title: "Place Holder 1",
+    Description:
+      "Description description description description description description description description description description description description description description",
+  },
 ];
 
 function App() {
   const [navBackground, setNavBackground] = useState("dark");
   const [navTheme, setNavTheme] = useState("dark");
+  const handleMouseEnter = (e) => {
+    e.target.style.color = "white";
+  };
+  const handleMouseLeave = (e) => {
+    e.target.style.color = "black";
+  };
 
   return (
     <div>
@@ -82,10 +102,12 @@ function App() {
 
         <div className="d-flex justify-content-center ">
           <a
+            className="iconContainer"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             href="https://www.linkedin.com/in/vidyutramanan/"
-            className="icon-link icon-link-hover"
           >
-            <Linkedin className="m-3" color="white" size={iconSize} />
+            <Linkedin className="m-3 icon" color="white" size={iconSize} />
           </a>
           <a href="https://github.com/vidyut-ramanan">
             <Github className="m-3" color="white" size={iconSize} />
@@ -131,44 +153,41 @@ function App() {
         className="d-flex flex-column justify-content-center align-items-center"
       >
         <h1 style={{ marginTop: "70px", marginBottom: "40px" }}>Projects</h1>
-        <div
-          style={{
-            marginBottom: "70px",
-            margin: "auto",
-            justifyContent: "center",
-          }}
-          className="row "
-        >
-          {projects.map((item) => {
-            return (
-              <div
-                style={{ justifyContent: "center" }}
-                className="col-sm mb-3 d-flex"
-              >
-                <Card
-                  style={{ width: "18rem" }}
-                  className="h-100 d-flex flex-column "
+        <div className="container">
+          <div style={{}} className="row gy-4">
+            {projects.map((item) => {
+              return (
+                <div
+                  style={{
+                    justifyContent: "center",
+                  }}
+                  className="col-sm col-md-6 col-lg-3 d-flex"
                 >
-                  <Card.Img
-                    variant="top"
-                    style={{
-                      height: "200px",
-                      width: "100%",
-                      objectFit: "cover",
-                    }}
-                    src={item.ImageUrl}
-                  ></Card.Img>
-                  <Card.Body
-                    className="flex-grow-1"
-                    style={{ height: "12rem" }}
+                  <Card
+                    style={{ width: "18rem" }}
+                    className="h-100 d-flex flex-column "
                   >
-                    <Card.Title>{item.Title}</Card.Title>
-                    <Card.Text>{item.Description}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </div>
-            );
-          })}
+                    <Card.Img
+                      variant="top"
+                      style={{
+                        height: "200px",
+                        width: "100%",
+                        objectFit: "cover",
+                      }}
+                      src={item.ImageUrl}
+                    ></Card.Img>
+                    <Card.Body
+                      className="flex-grow-1"
+                      style={{ height: "12rem" }}
+                    >
+                      <Card.Title>{item.Title}</Card.Title>
+                      <Card.Text>{item.Description}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

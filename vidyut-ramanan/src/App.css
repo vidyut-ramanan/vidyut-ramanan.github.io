@@ -1,0 +1,4 @@
+.iconContainer:hover > .icon {
+  color: yellow;
+  box-shadow: 1cm;
+}
